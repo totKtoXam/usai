@@ -1,0 +1,45 @@
+{
+  "name": "usai",
+  "version": "0.0.0",
+  "description": "Deterministic CLI for reusable AI-assisted development workflows.",
+  "type": "module",
+  "bin": {
+    "usai": "./dist/cli/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "package.json"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsx src/cli/index.ts",
+    "format": "prettier --check .",
+    "format:write": "prettier --write .",
+    "lint": "tsc --noEmit -p tsconfig.json",
+    "test": "pnpm build && node --test \"tests/**/*.test.mjs\""
+  },
+  "keywords": [
+    "ai",
+    "cli",
+    "markdown",
+    "prompts",
+    "rulesets",
+    "codex",
+    "claude",
+    "cursor",
+    "gemini",
+    "agents"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.19"
+  },
+  "packageManager": "pnpm@10.11.0",
+  "devDependencies": {
+    "@types/node": "^22.15.0",
+    "prettier": "^3.5.3",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
+  }
+}
