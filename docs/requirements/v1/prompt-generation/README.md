@@ -32,6 +32,24 @@ TemplateDefinition
   output
 ```
 
+## Delivery Phases
+
+Prompt generation в V1 реализуется поэтапно:
+
+```text
+Phase 2.1: Simple Mode
+Phase 2.2: Structured Mode
+Phase 2.3: Extended Mode
+```
+
+Порядок важен:
+
+- Simple Mode должен первым дать полезный `usai prompt` без YAML schema.
+- Structured Mode добавляет frontmatter metadata, required/default и output rules, не меняя renderer.
+- Extended Mode добавляет внешний schema-файл для больших и переиспользуемых question sets.
+
+Каждый режим должен компилироваться в один и тот же `TemplateDefinition`, чтобы CLI не получил три разных генератора.
+
 ### 1. Simple Mode
 
 Один `.md` файл без YAML frontmatter и без отдельного schema-файла. Placeholder сам содержит вопрос:
