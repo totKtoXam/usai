@@ -24,6 +24,20 @@ test("prints help", async () => {
   assert.match(stdout, /usai \[command\] \[options\]/);
 });
 
+test("prints init help", async () => {
+  const { stdout, stderr } = await execFileAsync(
+    process.execPath,
+    [cliPath, "init", "--help"],
+    {
+      cwd: repositoryRoot,
+    },
+  );
+
+  assert.equal(stderr, "");
+  assert.match(stdout, /Initialize UsAI files/);
+  assert.match(stdout, /usai init \[options\]/);
+});
+
 test("prints package version", async () => {
   const packageJson = JSON.parse(
     await readFile(resolve(repositoryRoot, "package.json"), "utf8"),

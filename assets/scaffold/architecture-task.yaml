@@ -1,0 +1,16 @@
+id: architecture-task
+output:
+  directory: docs/devs/generated-prompts
+  filename: "{{date}}-architecture-task.md"
+questions:
+  task_name:
+    label: Architecture task name?
+    type: text
+    required: true
+  scope:
+    label: Scope?
+    type: textarea
+    required: true
+  related_adrs:
+    label: Related ADR files?
+    type: file[]

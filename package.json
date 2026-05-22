@@ -8,11 +8,13 @@
   },
   "files": [
     "dist",
+    "assets",
     "README.md",
     "package.json"
   ],
   "scripts": {
-    "build": "tsc -p tsconfig.json",
+    "build": "pnpm clean && tsc -p tsconfig.json",
+    "clean": "node scripts/clean-dist.mjs",
     "dev": "tsx src/cli/index.ts",
     "format": "prettier --check .",
     "format:write": "prettier --write .",

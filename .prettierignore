@@ -1,7 +1,6 @@
+.vscode/
 node_modules/
 dist/
 coverage/
 .tmp-tests/
-.turbo/
-.DS_Store
-*.log
+

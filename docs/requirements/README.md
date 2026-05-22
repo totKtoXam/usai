@@ -76,6 +76,7 @@ macOS/Linux: ~/.cache/usai
 
 docs/
   devs/
+    README.md
     prompt-templates/
     prompt-schemas/      # optional, for extended templates only
     generated-prompts/
@@ -97,6 +98,8 @@ AGENTS.md
 ```
 
 `AGENTS.md` в корне должен быть маленьким router-файлом. Он описывает, какие группы rulesets подключать для разных типов задач, но не содержит все правила внутри себя.
+
+`docs/devs/` предназначен для людей-разработчиков и reusable prompt templates. Агент не должен читать этот каталог как source of truth для implementation context, business logic или review facts без явной просьбы пользователя.
 
 ## Core Modules
 
@@ -152,6 +155,7 @@ V1:
 V2:
 
 - [Agent Export Adapters](v2/export-adapters/README.md)
+- [Docs And Agent Instructions Check](v2/docs-check/README.md)
 - [Handoff Packages](v2/handoff-packages/README.md)
 - [Metrics Collection](v2/metrics/README.md)
 
@@ -174,6 +178,7 @@ V2 не должен расширять CLI в сторону multi-agent orches
 - `usai export codex`
 - `usai export claude`
 - `usai export cursor`
+- `usai docs check`
 - `usai handoff create`
 - `usai metrics collect`
 

@@ -24,9 +24,11 @@ usai init --with-samples
 - Создать `.usai/config.json`, если он отсутствует.
 - Создать директории `docs/devs`, `docs/rulesets`, `docs/decisions`.
 - Создать базовый `AGENTS.md`, если он отсутствует.
+- Создать `docs/devs/README.md`, который объясняет human-only назначение developer templates.
 - Создать `ADR-0000-template.md`, если он отсутствует.
 - Создать пример simple prompt template для `application-usecase`.
-- При `--with-samples` создать также structured и extended template examples.
+- Root `AGENTS.md` должен включать router rules, context-scope guard и Docs Maintenance Gate.
+- При `--with-samples` создать также structured, extended и workflow template examples.
 - Не перезаписывать существующие файлы без `--force`.
 - Вывести список созданных, пропущенных и конфликтующих файлов.
 
@@ -42,9 +44,13 @@ usai init --with-samples
 - После запуска `usai init` можно выполнить `usai prompt application-usecase` без отдельного YAML schema-файла.
 - Повторный запуск без `--force` не меняет существующие файлы.
 - Root `AGENTS.md` остается router-файлом, а не дампом всех правил.
+- Root `AGENTS.md` явно запрещает читать `docs/devs` как source of truth для implementation context.
+- `usai init --with-samples` создает reusable templates для feature brief, slice prompts, slice implementation и review prompt.
 
 ## Out of Scope
 
 - Установка внешних rulesets.
 - Export в agent-specific formats.
 - Автоматический анализ структуры исходного кода проекта.
+- Генерация `.codex/skills`, `CLAUDE.md`, `.cursor/rules/*.mdc` или других agent-specific файлов.
+- CLI-команда для проверки актуальности docs/AGENTS.
