@@ -101,6 +101,8 @@ AGENTS.md
 
 `docs/devs/` предназначен для людей-разработчиков и reusable prompt templates. Агент не должен читать этот каталог как source of truth для implementation context, business logic или review facts без явной просьбы пользователя.
 
+Public user docs live in `README.md` and `docs/user-guide/`. Internal product/technical requirements stay in `docs/requirements/`.
+
 ## Core Modules
 
 ```text
@@ -170,6 +172,10 @@ Implementation plan:
 - [Implementation Plan Overview](implementation-plan/README.md)
 - [V1 Implementation Plan](implementation-plan/v1.md)
 - [V2 Implementation Plan](implementation-plan/v2.md)
+
+Release docs:
+
+- [Versioning Policy](../release/versioning.md)
 
 ## V2 Scope
 

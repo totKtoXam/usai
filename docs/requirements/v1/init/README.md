@@ -29,6 +29,7 @@ usai init --with-samples
 - Создать пример simple prompt template для `application-usecase`.
 - Root `AGENTS.md` должен включать router rules, context-scope guard и Docs Maintenance Gate.
 - При `--with-samples` создать также structured, extended и workflow template examples.
+- Public docs для команды `init` должны быть отражены в `README.md`, `docs/user-guide/commands/init.md` и `CHANGELOG.md`.
 - Не перезаписывать существующие файлы без `--force`.
 - Вывести список созданных, пропущенных и конфликтующих файлов.
 
@@ -46,6 +47,7 @@ usai init --with-samples
 - Root `AGENTS.md` остается router-файлом, а не дампом всех правил.
 - Root `AGENTS.md` явно запрещает читать `docs/devs` как source of truth для implementation context.
 - `usai init --with-samples` создает reusable templates для feature brief, slice prompts, slice implementation и review prompt.
+- Public user docs описывают только реализованное поведение `usai init`, а planned commands помечены как planned.
 
 ## Out of Scope
 
