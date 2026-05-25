@@ -12,7 +12,9 @@ This project follows the versioning policy in [docs/release/versioning.md](docs/
 - `usai init` project scaffold command.
 - `usai init --root <path>` for explicit target directory initialization.
 - `usai init` scaffold now creates `docs/ai-workflows/modules` for module and feature workflow artifacts.
-- Commander-based CLI parser, Node.js 24 runtime target and tsup bundled build.
+- `usai prompt` Simple Mode generation with named templates, direct `.md` paths, answers files and explicit output paths.
+- `usai prompt` Structured Mode generation with YAML frontmatter questions, defaults and output metadata.
+- Commander-based CLI parser, Node.js 22 runtime target and tsup bundled build.
 - Public user guide skeleton.
 
 ### Changed

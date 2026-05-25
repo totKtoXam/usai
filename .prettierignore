@@ -3,4 +3,7 @@ node_modules/
 dist/
 coverage/
 .tmp-tests/
-
+.tmp-cli-tests/
+.tmp-esbuild-test/
+.local/
+checks/

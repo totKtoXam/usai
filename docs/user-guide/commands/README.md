@@ -3,6 +3,7 @@
 Available command docs:
 
 - [init](init.md)
+- [prompt](prompt.md)
 
 Planned V1 commands:
 

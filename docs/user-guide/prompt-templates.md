@@ -2,9 +2,9 @@
 
 Prompt templates are Markdown files used by `usai prompt`.
 
-The command is planned for V1. This page describes the intended template format.
+Simple and Structured modes are currently implemented. Extended mode is planned for a later V1 subphase.
 
-`usai prompt` should support both reusable template names and direct paths to workflow draft templates:
+`usai prompt` supports both reusable template names and direct paths to workflow draft templates:
 
 ```bash
 usai prompt application-usecase
@@ -45,6 +45,8 @@ Implement {{feature_name}}.
 ## Extended Mode
 
 One `.md` template plus one external `.yaml` schema. Use this only for large or shared question schemas.
+
+Extended Mode is planned but not implemented yet.
 
 ```text
 docs/devs/prompt-templates/architecture-task.md

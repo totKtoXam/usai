@@ -6,7 +6,7 @@ Deterministic CLI for reusable AI-assisted development workflows.
 
 ## Current Status
 
-`usai` is pre-release. The current implementation includes the repository baseline and `usai init`.
+`usai` is pre-release. The current implementation includes the repository baseline, `usai init` and Simple Mode `usai prompt`.
 
 Planned V1 commands:
 
@@ -20,7 +20,7 @@ usai rules install <rule-name> --size <nano|mini|full> --target <target>
 usai rules update
 ```
 
-Only document commands as available after they are implemented.
+`usai prompt` currently supports Simple and Structured Mode templates. Extended mode is planned for a later V1 subphase.
 
 ## Installation
 
@@ -49,6 +49,7 @@ This creates project-local configuration, prompt template folders, the `docs/ai-
 - [Installation](docs/user-guide/installation.md)
 - [Quick Start](docs/user-guide/quick-start.md)
 - [Commands](docs/user-guide/commands/README.md)
+- [Prompt Command](docs/user-guide/commands/prompt.md)
 - [Prompt Templates](docs/user-guide/prompt-templates.md)
 - [Project Layout](docs/user-guide/project-layout.md)
 - [Versioning Policy](docs/release/versioning.md)

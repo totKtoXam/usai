@@ -27,4 +27,4 @@ The CLI does not call AI models. It renders files from explicit inputs and proje
 
 ## Current Scope
 
-The current implementation is pre-release. `usai init` is available; other V1 commands are planned and documented only as roadmap items until implemented.
+The current implementation is pre-release. `usai init` and Simple/Structured Mode `usai prompt` are available; other V1 commands are planned and documented only as roadmap items until implemented.

@@ -12,6 +12,7 @@ coverage/
 .tmp-cli-tests/
 .tmp-esbuild-test/
 .local/
+checks/
 *.tgz
 
 # Tool caches

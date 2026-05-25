@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 import { Command, CommanderError } from "commander";
 import { runInit } from "./init/init-command.js";
 import { getVersion } from "./package-version.js";
+import { runPrompt } from "./prompt/prompt-command.js";
 
 /**
  * Runs the UsAI CLI with already-tokenized arguments.
@@ -70,12 +71,24 @@ export function createCliProgram(
   program
     .command("prompt <template>")
     .description("Generate a final prompt from a template.")
-    .action(() => {
-      console.error(
-        "`usai prompt` is planned for V1 but is not implemented yet.",
-      );
-      setExitCode(1);
-    });
+    .option("--answers <path>", "Read prompt answers from a YAML file")
+    .option("--force", "Overwrite an existing output file")
+    .option("--no-interactive", "Fail instead of asking for missing answers")
+    .option("--output <path>", "Write generated prompt to an explicit path")
+    .action(
+      async (
+        templateReference: string,
+        options: {
+          answers?: string;
+          force?: boolean;
+          interactive?: boolean;
+          noInteractive?: boolean;
+          output?: string;
+        },
+      ) => {
+        setExitCode(await runPrompt(templateReference, options));
+      },
+    );
 
   program
     .command("rules")
