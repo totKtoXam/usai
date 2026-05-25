@@ -21,8 +21,7 @@ CLI flags
   "paths": {
     "promptTemplates": "docs/devs/prompt-templates",
     "promptSchemas": "docs/devs/prompt-schemas",
-    "generatedPrompts": "docs/devs/generated-prompts",
-    "handoffs": "docs/devs/handoffs",
+    "aiWorkflows": "docs/devs/ai-workflows",
     "rulesets": "docs/rulesets",
     "decisions": "docs/decisions",
     "roadmap": "docs/roadmap.md"
@@ -34,6 +33,8 @@ CLI flags
 ```
 
 `promptSchemas` используется только для extended prompt templates. Simple и structured templates должны работать без отдельного schema-файла.
+
+`aiWorkflows` указывает на canonical directory для module/feature workflow artifacts: `module.md`, `draft.md`, `final.md`, `completion-report.md` и `handoff.md`.
 
 ## Global Config
 

@@ -27,6 +27,7 @@ Only document commands as available after they are implemented.
 The package is not published yet. For local development:
 
 ```bash
+node --version # requires Node.js 24+
 pnpm install
 pnpm build
 node dist/cli/index.js --help
@@ -40,7 +41,7 @@ Initialize UsAI files in a project:
 node dist/cli/index.js init
 ```
 
-This creates project-local configuration, prompt template folders, ruleset folders, ADR folder, `docs/devs/README.md` and root `AGENTS.md`.
+This creates project-local configuration, prompt template folders, the `docs/devs/ai-workflows` workflow area, ruleset folders, ADR folder, `docs/devs/README.md` and root `AGENTS.md`.
 
 ## Documentation
 

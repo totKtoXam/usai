@@ -16,7 +16,7 @@ test.after(async () => {
   }
 });
 
-test("init creates default project scaffold at project root", async () => {
+test("init creates default project scaffold in the current directory", async () => {
   const projectRoot = await createTempProject();
   const nestedDirectory = resolve(projectRoot, "src/Application");
   await mkdir(nestedDirectory, { recursive: true });
@@ -26,16 +26,40 @@ test("init creates default project scaffold at project root", async () => {
   assert.equal(result.code, 0, result.stderr);
   assert.match(result.stdout, /Created directories:/);
   assert.match(result.stdout, /Created files:/);
-  assert.ok(existsSync(resolve(projectRoot, ".usai/config.json")));
-  assert.ok(existsSync(resolve(projectRoot, "AGENTS.md")));
-  assert.ok(existsSync(resolve(projectRoot, "docs/devs/README.md")));
+  assert.ok(existsSync(resolve(nestedDirectory, ".usai/config.json")));
+  assert.ok(existsSync(resolve(nestedDirectory, "AGENTS.md")));
+  assert.ok(existsSync(resolve(nestedDirectory, "docs/devs/README.md")));
+  assert.ok(
+    existsSync(resolve(nestedDirectory, "docs/devs/ai-workflows/modules")),
+  );
+  assert.ok(
+    !existsSync(resolve(nestedDirectory, "docs/devs/generated-prompts")),
+  );
+  assert.ok(!existsSync(resolve(nestedDirectory, "docs/devs/handoffs")));
   assert.ok(
     existsSync(
-      resolve(projectRoot, "docs/devs/prompt-templates/application-usecase.md"),
+      resolve(
+        nestedDirectory,
+        "docs/devs/prompt-templates/application-usecase.md",
+      ),
     ),
   );
-  assert.ok(existsSync(resolve(projectRoot, "docs/rulesets/always")));
-  assert.ok(!existsSync(resolve(projectRoot, "docs/rulesets/always/.gitkeep")));
+  assert.ok(existsSync(resolve(nestedDirectory, "docs/rulesets/always")));
+  assert.ok(
+    !existsSync(resolve(nestedDirectory, "docs/rulesets/always/.gitkeep")),
+  );
+  assert.ok(!existsSync(resolve(projectRoot, ".usai/config.json")));
+});
+
+test("init can target an explicit root directory", async () => {
+  const projectRoot = await createTempProject();
+  const nestedDirectory = resolve(projectRoot, "src/Application");
+  await mkdir(nestedDirectory, { recursive: true });
+
+  const result = await runCli(["init", "--root", projectRoot], nestedDirectory);
+
+  assert.equal(result.code, 0, result.stderr);
+  assert.ok(existsSync(resolve(projectRoot, ".usai/config.json")));
   assert.ok(!existsSync(resolve(nestedDirectory, ".usai/config.json")));
 });
 
@@ -93,6 +117,7 @@ test("init minimal skips sample prompt and ADR files", async () => {
   assert.ok(existsSync(resolve(projectRoot, ".usai/config.json")));
   assert.ok(existsSync(resolve(projectRoot, "AGENTS.md")));
   assert.ok(existsSync(resolve(projectRoot, "docs/devs/prompt-templates")));
+  assert.ok(existsSync(resolve(projectRoot, "docs/devs/ai-workflows/modules")));
   assert.ok(!existsSync(resolve(projectRoot, "docs/devs/README.md")));
   assert.ok(
     !existsSync(
@@ -115,6 +140,12 @@ test("init with samples creates structured and extended prompt examples", async 
       resolve(projectRoot, "docs/devs/prompt-templates/application-usecase.md"),
     ),
   );
+  const config = JSON.parse(
+    await readFile(resolve(projectRoot, ".usai/config.json"), "utf8"),
+  );
+  assert.equal(config.paths.aiWorkflows, "docs/devs/ai-workflows");
+  assert.equal(config.paths.generatedPrompts, undefined);
+  assert.equal(config.paths.handoffs, undefined);
   assert.ok(
     existsSync(
       resolve(projectRoot, "docs/devs/prompt-templates/feature-slice.md"),

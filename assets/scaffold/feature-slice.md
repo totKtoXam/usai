@@ -1,9 +1,13 @@
 ---
 id: feature-slice
 output:
-  directory: docs/devs/generated-prompts
-  filename: "{{date}}-{{feature_name}}-slice.md"
+  directory: docs/devs/ai-workflows/modules/{{module_name}}/features/{{datetime}}-{{feature_name}}
+  filename: final.md
 questions:
+  module_name:
+    label: Module name?
+    type: text
+    required: true
   feature_name:
     label: Feature name?
     type: text

@@ -13,7 +13,7 @@
     "package.json"
   ],
   "scripts": {
-    "build": "pnpm clean && tsc -p tsconfig.json",
+    "build": "pnpm clean && tsup ./src/cli/index.ts --format esm --platform node --target node24 --sourcemap --out-dir dist/cli",
     "clean": "node scripts/clean-dist.mjs",
     "dev": "tsx src/cli/index.ts",
     "format": "prettier --check .",
@@ -35,13 +35,22 @@
   ],
   "license": "MIT",
   "engines": {
-    "node": ">=20.19"
+    "node": ">=24.0.0"
   },
   "packageManager": "pnpm@10.11.0",
   "devDependencies": {
-    "@types/node": "^22.15.0",
+    "@types/node": "^24.12.4",
     "prettier": "^3.5.3",
+    "tsup": "^8.5.1",
     "tsx": "^4.19.4",
     "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@inquirer/prompts": "^8.4.3",
+    "commander": "^14.0.3",
+    "fast-glob": "^3.3.3",
+    "picocolors": "^1.1.1",
+    "yaml": "^2.9.0",
+    "zod": "^4.4.3"
   }
 }

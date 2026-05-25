@@ -32,6 +32,12 @@ Preserve original business field names in field tables and add separate proposed
 
 Do not treat UI labels, spreadsheet labels, database column suggestions or string lengths as implementation contracts unless the source explicitly makes them business requirements.
 
-Save the generated artifact as Markdown in:
+Save the generated artifact as Markdown. For module-level context, prefer:
+
+```text
+docs/devs/ai-workflows/modules/{module-name}/module.md
+```
+
+Output path:
 
 {{output_path:text: Output path?}}

@@ -8,7 +8,7 @@
 
 ```text
 markdown template + optional question schema + developer answers
--> generated prompt.md
+-> workflow draft.md or final.md
 ```
 
 Система должна быть предсказуемой, воспроизводимой и удобной для code review. Все важные артефакты проекта должны оставаться обычными файлами в репозитории, а не скрытым состоянием CLI.
@@ -33,7 +33,25 @@ usai prompt application-usecase
 usai rules install clean-code --size nano --target always
 ```
 
-Node.js + TypeScript используются как основной стек реализации. На первом этапе допустима установка через npm/pnpm, но архитектура должна оставаться friendly к будущей сборке standalone binaries под Windows, Linux и macOS.
+Node.js 24 LTS + TypeScript используются как основной стек реализации. На первом этапе допустима установка через npm/pnpm, но архитектура должна оставаться friendly к будущей сборке standalone binaries под Windows, Linux и macOS.
+
+## Implementation Stack
+
+```text
+Runtime: Node.js 24 LTS
+Language: TypeScript
+Package manager: pnpm
+CLI parser: commander
+Interactive prompts: @inquirer/prompts
+Config/schema validation: zod
+YAML: yaml
+Frontmatter: custom splitter + yaml parser
+Template rendering: custom {{...}} renderer
+Terminal colors: picocolors
+File discovery: fast-glob
+Tests: node:test
+Build: tsup bundled CLI + tsc --noEmit typecheck
+```
 
 ## Конфигурационная модель
 
@@ -79,8 +97,16 @@ docs/
     README.md
     prompt-templates/
     prompt-schemas/      # optional, for extended templates only
-    generated-prompts/
-    handoffs/
+    ai-workflows/
+      modules/
+        {module-name}/
+          module.md
+          features/
+            {yyyyMMdd-HHmm}-{feature-name}/
+              draft.md
+              final.md
+              completion-report.md
+              handoff.md
 
   rulesets/
     always/
@@ -99,7 +125,18 @@ AGENTS.md
 
 `AGENTS.md` в корне должен быть маленьким router-файлом. Он описывает, какие группы rulesets подключать для разных типов задач, но не содержит все правила внутри себя.
 
-`docs/devs/` предназначен для людей-разработчиков и reusable prompt templates. Агент не должен читать этот каталог как source of truth для implementation context, business logic или review facts без явной просьбы пользователя.
+`docs/devs/` предназначен для людей-разработчиков, reusable prompt templates и AI workflow artifacts. Агент не должен читать этот каталог как source of truth для implementation context, business logic или review facts без явной просьбы пользователя.
+
+`docs/devs/ai-workflows/` является canonical зоной для module/feature workflow lifecycle:
+
+```text
+Module understanding
+-> Feature planning
+-> Slice draft
+-> Final prompt
+-> Implementation
+-> Completion report / handoff
+```
 
 Public user docs live in `README.md` and `docs/user-guide/`. Internal product/technical requirements stay in `docs/requirements/`.
 

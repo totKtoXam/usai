@@ -16,12 +16,15 @@ node dist/cli/index.js init
 
 ## Options
 
-| Option           | Description                                            |
-| ---------------- | ------------------------------------------------------ |
-| `--force`        | Overwrite conflicting scaffold files.                  |
-| `--minimal`      | Create config, router and directories only.            |
-| `--with-samples` | Add structured, extended and workflow prompt examples. |
-| `-h`, `--help`   | Show command help.                                     |
+| Option           | Description                                                       |
+| ---------------- | ----------------------------------------------------------------- |
+| `--force`        | Overwrite conflicting scaffold files.                             |
+| `--minimal`      | Create config, router and directories only.                       |
+| `--root <path>`  | Initialize a specific directory instead of the current directory. |
+| `--with-samples` | Add structured, extended and workflow prompt examples.            |
+| `-h`, `--help`   | Show command help.                                                |
+
+By default, `usai init` writes into the current working directory. It does not walk up to the nearest parent `.git` directory.
 
 ## Generated Files
 
@@ -48,6 +51,12 @@ docs/devs/prompt-templates/review-slice.md
 ```
 
 `usai init` also creates the configured directories under `docs/devs`, `docs/rulesets` and `docs/decisions`.
+
+The default `docs/devs` workflow directory is:
+
+```text
+docs/devs/ai-workflows/modules/
+```
 
 ## Constraints
 

@@ -6,7 +6,7 @@ Postponed to V2.
 
 ## Цель
 
-Metrics collection собирает простые engineering metrics вокруг generated prompts, rulesets и handoffs. Фича не должна превращаться в telemetry platform.
+Metrics collection собирает простые engineering metrics вокруг AI workflow artifacts, final prompts, rulesets и handoffs. Фича не должна превращаться в telemetry platform.
 
 ## Command
 
@@ -16,7 +16,8 @@ usai metrics collect
 
 ## Possible Metrics
 
-- Количество generated prompts.
+- Количество workflow modules/features.
+- Количество final prompts.
 - Используемые prompt templates.
 - Установленные rulesets по target.
 - Наличие handoff файлов.

@@ -1,6 +1,6 @@
 import { readFile } from "node:fs/promises";
-import { dirname, resolve } from "node:path";
-import { fileURLToPath } from "node:url";
+import { resolve } from "node:path";
+import { resolvePackageRoot } from "../package/package-root.js";
 
 /**
  * Reads a scaffold asset from the package-level `assets/scaffold` directory.
@@ -22,5 +22,5 @@ export function resolveScaffoldAssetPath(assetFileName: string): string {
  * Resolves the package root from this module location.
  */
 function getPackageRoot(): string {
-  return resolve(dirname(fileURLToPath(import.meta.url)), "../../..");
+  return resolvePackageRoot(import.meta.url);
 }

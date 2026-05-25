@@ -1,5 +1,6 @@
 import { mkdir } from "node:fs/promises";
-import { findProjectRoot, resolveProjectPath } from "./project-root.js";
+import { resolve } from "node:path";
+import { resolveProjectPath } from "./project-root.js";
 import { writeScaffoldFile } from "./scaffold-file-writer.js";
 import { scaffoldDirectories } from "./scaffold-directories.js";
 import { getScaffoldFiles } from "./scaffold-files.js";
@@ -15,6 +16,7 @@ export type InitOptions = {
   cwd: string;
   force?: boolean;
   minimal?: boolean;
+  root?: string;
   withSamples?: boolean;
 };
 
@@ -24,7 +26,9 @@ export type InitOptions = {
 export async function initializeProject(
   options: InitOptions,
 ): Promise<ScaffoldResult> {
-  const projectRoot = findProjectRoot(options.cwd);
+  const projectRoot = options.root
+    ? resolve(options.cwd, options.root)
+    : resolve(options.cwd);
   const result = createScaffoldResult(projectRoot);
 
   for (const directory of scaffoldDirectories) {

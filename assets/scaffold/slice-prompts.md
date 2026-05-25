@@ -22,7 +22,7 @@ Choose:
 - `full-slice-mode` for multi-layer features, multiple use cases, new schema/entity/API, migrations, integrations or dependency chain.
 - `blockers-report` when safe write scope cannot be determined.
 
-Every generated prompt must include:
+Every generated draft prompt template must include:
 
 - Mode;
 - Goal;
@@ -36,6 +36,14 @@ Every generated prompt must include:
 - Blockers;
 - Documentation Scope;
 - Verification Gate.
+
+Draft prompt templates should be written under:
+
+```text
+docs/devs/ai-workflows/modules/{module-name}/features/{yyyyMMdd-HHmm}-{feature-name}/draft.md
+```
+
+The compiled final prompt should be written next to it as `final.md`.
 
 Do not include `docs/devs/` in implementation Read Scope or Write Scope.
 

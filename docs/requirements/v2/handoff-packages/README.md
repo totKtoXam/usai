@@ -16,7 +16,7 @@ usai handoff create
 
 ## Functional Requirements
 
-- Создать handoff markdown в `docs/devs/handoffs`.
+- Создать handoff markdown в feature workflow folder under `docs/devs/ai-workflows/modules/{module}/features/{yyyyMMdd-HHmm}-{feature}/handoff.md`.
 - Спросить task summary, current status, changed files, risks, next steps.
 - Позволить включить links на generated prompts и ADR.
 - Использовать deterministic template.

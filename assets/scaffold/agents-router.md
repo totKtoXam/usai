@@ -7,7 +7,7 @@ Use this file as a router for project AI instructions. Do not load every ruleset
 - Keep implementation scope bounded by the user's request.
 - Read only the Markdown docs, nearest `AGENTS.md` files and source files needed for the current task.
 - Ask before opening broad folders or files outside the stated scope.
-- Do not use `docs/devs/` as source of truth for business logic, architecture or implementation context. It is a human-maintained prompt/template area.
+- Do not use `docs/devs/` as source of truth for business logic, architecture or implementation context. It is a human-maintained prompt/template and workflow artifact area.
 - Do not call AI from deterministic project tooling unless the user explicitly asked for an agent to perform the work.
 
 Always follow:

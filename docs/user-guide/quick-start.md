@@ -3,6 +3,7 @@
 Build the CLI locally:
 
 ```bash
+node --version # requires Node.js 24+
 pnpm install
 pnpm build
 ```
@@ -11,6 +12,12 @@ Initialize a project:
 
 ```bash
 node dist/cli/index.js init
+```
+
+`init` writes into the current directory. To initialize another directory explicitly:
+
+```bash
+node dist/cli/index.js init --root path/to/project
 ```
 
 Create additional sample prompt templates:

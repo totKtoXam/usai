@@ -4,6 +4,13 @@ Prompt templates are Markdown files used by `usai prompt`.
 
 The command is planned for V1. This page describes the intended template format.
 
+`usai prompt` should support both reusable template names and direct paths to workflow draft templates:
+
+```bash
+usai prompt application-usecase
+usai prompt docs/devs/ai-workflows/modules/railway-tracks/features/20260522-2115-update-railway-track/draft.md
+```
+
 ## Simple Mode
 
 One `.md` file without YAML frontmatter:
@@ -43,6 +50,10 @@ One `.md` template plus one external `.yaml` schema. Use this only for large or 
 docs/devs/prompt-templates/architecture-task.md
 docs/devs/prompt-schemas/architecture-task.yaml
 ```
+
+## Workflow Drafts
+
+A generated workflow `draft.md` can itself be a Simple, Structured or Extended template. `usai` should parse it the same way as a reusable template and write the compiled result to `final.md`.
 
 ## Placeholder Types
 

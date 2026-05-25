@@ -1,31 +1,26 @@
 import { initializeProject } from "../../core/project/scaffold.js";
-import { formatInitHelp } from "./init-help.js";
-import { parseInitOptions } from "./init-options.js";
 import { formatInitResult } from "./init-result-format.js";
+
+/**
+ * Commander options accepted by `usai init`.
+ */
+export type InitCommandOptions = {
+  force?: boolean;
+  minimal?: boolean;
+  root?: string;
+  withSamples?: boolean;
+};
 
 /**
  * Runs the `usai init` command.
  */
-export async function runInit(args: string[]): Promise<number> {
-  if (args.includes("--help") || args.includes("-h")) {
-    console.log(formatInitHelp());
-    return 0;
-  }
-
-  const parseResult = parseInitOptions(args);
-
-  if (!parseResult.ok) {
-    console.error(parseResult.error);
-    console.error("");
-    console.error(formatInitHelp());
-    return 1;
-  }
-
+export async function runInit(options: InitCommandOptions): Promise<number> {
   const result = await initializeProject({
     cwd: process.cwd(),
-    force: parseResult.options.force,
-    minimal: parseResult.options.minimal,
-    withSamples: parseResult.options.withSamples,
+    force: options.force === true,
+    minimal: options.minimal === true,
+    root: options.root,
+    withSamples: options.withSamples === true,
   });
 
   console.log(formatInitResult(result));

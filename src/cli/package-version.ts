@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
-import { dirname, resolve } from "node:path";
-import { fileURLToPath } from "node:url";
+import { resolve } from "node:path";
+import { resolvePackageRoot } from "../core/package/package-root.js";
 
 type PackageJson = {
   version?: string;
@@ -10,8 +10,10 @@ type PackageJson = {
  * Reads the package version from package metadata.
  */
 export function getVersion(): string {
-  const currentDir = dirname(fileURLToPath(import.meta.url));
-  const packageJsonPath = resolve(currentDir, "../../package.json");
+  const packageJsonPath = resolve(
+    resolvePackageRoot(import.meta.url),
+    "package.json",
+  );
   const packageJson = JSON.parse(
     readFileSync(packageJsonPath, "utf8"),
   ) as PackageJson;
