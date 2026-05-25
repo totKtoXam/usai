@@ -1,8 +1,25 @@
+# Dependencies
 node_modules/
+.pnpm-store/
+
+# Build output
 dist/
 coverage/
+*.tsbuildinfo
+
+# Local test and packaging artifacts
 .tmp-tests/
+.tmp-cli-tests/
+.tmp-esbuild-test/
+.local/
+*.tgz
+
+# Tool caches
 .turbo/
+
+# Editor and OS files
+.vscode/
 .DS_Store
+
+# Logs
 *.log
-.local
