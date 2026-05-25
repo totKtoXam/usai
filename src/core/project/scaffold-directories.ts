@@ -5,7 +5,7 @@ export const scaffoldDirectories = [
   ".usai",
   "docs/devs/prompt-templates",
   "docs/devs/prompt-schemas",
-  "docs/devs/ai-workflows/modules",
+  "docs/ai-workflows/modules",
   "docs/rulesets/always",
   "docs/rulesets/architectural",
   "docs/rulesets/feature",

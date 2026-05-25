@@ -1,7 +1,7 @@
 ---
 id: feature-slice
 output:
-  directory: docs/devs/ai-workflows/modules/{{module_name}}/features/{{datetime}}-{{feature_name}}
+  directory: docs/ai-workflows/modules/{{module_name}}/features/{{datetime}}-{{feature_name}}
   filename: final.md
 questions:
   module_name:

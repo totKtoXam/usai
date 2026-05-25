@@ -1,6 +1,6 @@
 id: architecture-task
 output:
-  directory: docs/devs/ai-workflows/architecture
+  directory: docs/ai-workflows/architecture
   filename: "{{date}}-architecture-task.md"
 questions:
   task_name:

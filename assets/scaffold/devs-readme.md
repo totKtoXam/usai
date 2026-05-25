@@ -1,6 +1,6 @@
-# Developer Agent Workflow
+# Developer Prompt Templates
 
-This directory is for human-maintained prompt templates and AI workflow artifacts.
+This directory is for human-maintained prompt templates and optional prompt schemas.
 
 Agents must not treat `docs/devs/` as source of truth for business logic, architecture, implementation scope or review facts. For implementation work, agents should use:
 
@@ -16,7 +16,7 @@ Agents must not treat `docs/devs/` as source of truth for business logic, archit
 2. Generate a feature slice draft prompt template.
 3. Compile the draft through `usai prompt` into a final prompt.
 4. Run one final prompt at a time.
-5. Save completion reports and handoff notes next to the feature workflow.
+5. Save completion reports and handoff notes next to the feature workflow under `docs/ai-workflows/`.
 
 ## Prompt Templates
 
@@ -24,12 +24,12 @@ Reusable prompt templates live in `docs/devs/prompt-templates/`.
 
 ## AI Workflows
 
-Workflow artifacts should live under `docs/devs/ai-workflows/` unless the project config overrides the path.
+Workflow artifacts should live under `docs/ai-workflows/` unless the project config overrides the path.
 
 Recommended layout:
 
 ```text
-docs/devs/ai-workflows/
+docs/ai-workflows/
   modules/
     {module-name}/
       module.md

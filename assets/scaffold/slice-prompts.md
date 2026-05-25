@@ -40,7 +40,7 @@ Every generated draft prompt template must include:
 Draft prompt templates should be written under:
 
 ```text
-docs/devs/ai-workflows/modules/{module-name}/features/{yyyyMMdd-HHmm}-{feature-name}/draft.md
+docs/ai-workflows/modules/{module-name}/features/{yyyyMMdd-HHmm}-{feature-name}/draft.md
 ```
 
 The compiled final prompt should be written next to it as `final.md`.

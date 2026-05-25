@@ -14,7 +14,7 @@ The default scaffold creates:
   "paths": {
     "promptTemplates": "docs/devs/prompt-templates",
     "promptSchemas": "docs/devs/prompt-schemas",
-    "aiWorkflows": "docs/devs/ai-workflows",
+    "aiWorkflows": "docs/ai-workflows",
     "rulesets": "docs/rulesets",
     "decisions": "docs/decisions",
     "roadmap": "docs/roadmap.md"

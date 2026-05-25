@@ -21,7 +21,7 @@ usai docs check --strict
 
 - Проверить наличие root `AGENTS.md`.
 - Проверить наличие configured layer/project `AGENTS.md` файлов.
-- Проверить, что `docs/devs/` помечен как human-only prompt/template and workflow artifact area.
+- Проверить, что `docs/devs/` помечен как human-only prompt/template area.
 - Проверить наличие required documentation entrypoints:
   - architecture overview;
   - project structure;

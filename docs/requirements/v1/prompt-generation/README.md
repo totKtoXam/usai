@@ -15,8 +15,8 @@ usai prompt application-usecase
 Опционально:
 
 ```bash
-usai prompt application-usecase --output docs/devs/ai-workflows/modules/railway-tracks/features/20260522-2115-update-railway-track/final.md
-usai prompt docs/devs/ai-workflows/modules/railway-tracks/features/20260522-2115-update-railway-track/draft.md
+usai prompt application-usecase --output docs/ai-workflows/modules/railway-tracks/features/20260522-2115-update-railway-track/final.md
+usai prompt docs/ai-workflows/modules/railway-tracks/features/20260522-2115-update-railway-track/draft.md
 usai prompt application-usecase --answers answers.yaml
 usai prompt application-usecase --no-interactive
 ```
@@ -57,7 +57,7 @@ Phase 2.3: Extended Mode
 
 ```text
 application-usecase
-docs/devs/ai-workflows/modules/railway-tracks/features/20260522-2115-update-railway-track/draft.md
+docs/ai-workflows/modules/railway-tracks/features/20260522-2115-update-railway-track/draft.md
 ```
 
 - name reference ищется в configured `promptTemplates` directory;
@@ -79,7 +79,7 @@ feature/module brief
 Canonical V1 layout для workflow artifacts:
 
 ```text
-docs/devs/ai-workflows/
+docs/ai-workflows/
   modules/
     {module-name}/
       module.md
@@ -124,7 +124,7 @@ Simple Mode должен быть default mental model для разработч
 ---
 id: application-usecase
 output:
-  directory: docs/devs/ai-workflows/modules/{{module_name}}/features/{{datetime}}-{{use_case|kebab}}
+  directory: docs/ai-workflows/modules/{{module_name}}/features/{{datetime}}-{{use_case|kebab}}
   filename: final.md
 
 questions:
@@ -260,7 +260,7 @@ number     numeric value, mainly for structured/extended mode
 - Имя файла по умолчанию должно быть стабильным и читаемым.
 - Generated prompt должен содержать только итоговый markdown, без debug metadata.
 - При конфликте имени файла CLI должен предложить overwrite или создать новое имя.
-- Feature-level outputs should follow `docs/devs/ai-workflows/modules/{module}/features/{yyyyMMdd-HHmm}-{feature}/final.md` unless explicit `--output` overrides it.
+- Feature-level outputs should follow `docs/ai-workflows/modules/{module}/features/{yyyyMMdd-HHmm}-{feature}/final.md` unless explicit `--output` overrides it.
 
 ## Acceptance Criteria
 

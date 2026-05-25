@@ -25,12 +25,12 @@ usai init --with-samples
 - Поддержать explicit target root через `--root <path>`.
 - Не подниматься автоматически к родительскому `.git` при `usai init`.
 - Создать `.usai/config.json`, если он отсутствует.
-- Создать директории `docs/devs`, `docs/devs/ai-workflows/modules`, `docs/rulesets`, `docs/decisions`.
+- Создать директории `docs/devs`, `docs/ai-workflows/modules`, `docs/rulesets`, `docs/decisions`.
 - Создать базовый `AGENTS.md`, если он отсутствует.
 - Создать `docs/devs/README.md`, который объясняет human-only назначение developer templates.
 - Создать `ADR-0000-template.md`, если он отсутствует.
 - Создать пример simple prompt template для `application-usecase`.
-- Создать config path `paths.aiWorkflows`, указывающий на `docs/devs/ai-workflows`.
+- Создать config path `paths.aiWorkflows`, указывающий на `docs/ai-workflows`.
 - Root `AGENTS.md` должен включать router rules, context-scope guard и Docs Maintenance Gate.
 - При `--with-samples` создать также structured, extended и workflow template examples.
 - Public docs для команды `init` должны быть отражены в `README.md`, `docs/user-guide/commands/init.md` и `CHANGELOG.md`.

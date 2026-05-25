@@ -52,10 +52,10 @@ docs/devs/prompt-templates/review-slice.md
 
 `usai init` also creates the configured directories under `docs/devs`, `docs/rulesets` and `docs/decisions`.
 
-The default `docs/devs` workflow directory is:
+The default workflow directory is:
 
 ```text
-docs/devs/ai-workflows/modules/
+docs/ai-workflows/modules/
 ```
 
 ## Constraints

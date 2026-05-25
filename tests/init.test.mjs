@@ -29,9 +29,7 @@ test("init creates default project scaffold in the current directory", async () 
   assert.ok(existsSync(resolve(nestedDirectory, ".usai/config.json")));
   assert.ok(existsSync(resolve(nestedDirectory, "AGENTS.md")));
   assert.ok(existsSync(resolve(nestedDirectory, "docs/devs/README.md")));
-  assert.ok(
-    existsSync(resolve(nestedDirectory, "docs/devs/ai-workflows/modules")),
-  );
+  assert.ok(existsSync(resolve(nestedDirectory, "docs/ai-workflows/modules")));
   assert.ok(
     !existsSync(resolve(nestedDirectory, "docs/devs/generated-prompts")),
   );
@@ -117,7 +115,7 @@ test("init minimal skips sample prompt and ADR files", async () => {
   assert.ok(existsSync(resolve(projectRoot, ".usai/config.json")));
   assert.ok(existsSync(resolve(projectRoot, "AGENTS.md")));
   assert.ok(existsSync(resolve(projectRoot, "docs/devs/prompt-templates")));
-  assert.ok(existsSync(resolve(projectRoot, "docs/devs/ai-workflows/modules")));
+  assert.ok(existsSync(resolve(projectRoot, "docs/ai-workflows/modules")));
   assert.ok(!existsSync(resolve(projectRoot, "docs/devs/README.md")));
   assert.ok(
     !existsSync(
@@ -143,7 +141,7 @@ test("init with samples creates structured and extended prompt examples", async 
   const config = JSON.parse(
     await readFile(resolve(projectRoot, ".usai/config.json"), "utf8"),
   );
-  assert.equal(config.paths.aiWorkflows, "docs/devs/ai-workflows");
+  assert.equal(config.paths.aiWorkflows, "docs/ai-workflows");
   assert.equal(config.paths.generatedPrompts, undefined);
   assert.equal(config.paths.handoffs, undefined);
   assert.ok(

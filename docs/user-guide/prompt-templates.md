@@ -8,7 +8,7 @@ The command is planned for V1. This page describes the intended template format.
 
 ```bash
 usai prompt application-usecase
-usai prompt docs/devs/ai-workflows/modules/railway-tracks/features/20260522-2115-update-railway-track/draft.md
+usai prompt docs/ai-workflows/modules/railway-tracks/features/20260522-2115-update-railway-track/draft.md
 ```
 
 ## Simple Mode

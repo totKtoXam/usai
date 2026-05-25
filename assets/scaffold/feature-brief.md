@@ -35,7 +35,7 @@ Do not treat UI labels, spreadsheet labels, database column suggestions or strin
 Save the generated artifact as Markdown. For module-level context, prefer:
 
 ```text
-docs/devs/ai-workflows/modules/{module-name}/module.md
+docs/ai-workflows/modules/{module-name}/module.md
 ```
 
 Output path:

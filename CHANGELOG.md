@@ -11,7 +11,7 @@ This project follows the versioning policy in [docs/release/versioning.md](docs/
 - Initial Node.js + TypeScript CLI baseline.
 - `usai init` project scaffold command.
 - `usai init --root <path>` for explicit target directory initialization.
-- `usai init` scaffold now creates `docs/devs/ai-workflows/modules` for module and feature workflow artifacts.
+- `usai init` scaffold now creates `docs/ai-workflows/modules` for module and feature workflow artifacts.
 - Commander-based CLI parser, Node.js 24 runtime target and tsup bundled build.
 - Public user guide skeleton.
 

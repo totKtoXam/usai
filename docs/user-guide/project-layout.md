@@ -7,12 +7,13 @@
   config.json
 
 docs/
+  ai-workflows/
+    modules/
+
   devs/
     README.md
     prompt-templates/
     prompt-schemas/
-    ai-workflows/
-      modules/
 
   rulesets/
     always/
@@ -30,10 +31,10 @@ AGENTS.md
 ## Responsibilities
 
 - `AGENTS.md`: router for agent instructions and docs maintenance rules.
-- `docs/devs/`: human-maintained prompt templates and workflow artifacts.
+- `docs/ai-workflows/`: module, feature, prompt, report and handoff workflow artifacts.
+- `docs/devs/`: human-maintained prompt templates and schemas.
 - `docs/devs/prompt-templates/`: reusable prompt templates.
 - `docs/devs/prompt-schemas/`: optional schemas for extended templates.
-- `docs/devs/ai-workflows/`: module, feature, prompt, report and handoff workflow artifacts.
 - `docs/rulesets/`: reusable rules grouped by target.
 - `docs/decisions/`: ADR files.
 
@@ -44,7 +45,7 @@ AGENTS.md
 Recommended workflow artifact layout:
 
 ```text
-docs/devs/ai-workflows/
+docs/ai-workflows/
   modules/
     {module-name}/
       module.md

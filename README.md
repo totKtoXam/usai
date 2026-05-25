@@ -41,7 +41,7 @@ Initialize UsAI files in a project:
 node dist/cli/index.js init
 ```
 
-This creates project-local configuration, prompt template folders, the `docs/devs/ai-workflows` workflow area, ruleset folders, ADR folder, `docs/devs/README.md` and root `AGENTS.md`.
+This creates project-local configuration, prompt template folders, the `docs/ai-workflows` workflow area, ruleset folders, ADR folder, `docs/devs/README.md` and root `AGENTS.md`.
 
 ## Documentation
 

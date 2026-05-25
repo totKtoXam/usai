@@ -93,20 +93,21 @@ macOS/Linux: ~/.cache/usai
   config.json
 
 docs/
+  ai-workflows/
+    modules/
+      {module-name}/
+        module.md
+        features/
+          {yyyyMMdd-HHmm}-{feature-name}/
+            draft.md
+            final.md
+            completion-report.md
+            handoff.md
+
   devs/
     README.md
     prompt-templates/
     prompt-schemas/      # optional, for extended templates only
-    ai-workflows/
-      modules/
-        {module-name}/
-          module.md
-          features/
-            {yyyyMMdd-HHmm}-{feature-name}/
-              draft.md
-              final.md
-              completion-report.md
-              handoff.md
 
   rulesets/
     always/
@@ -125,9 +126,9 @@ AGENTS.md
 
 `AGENTS.md` в корне должен быть маленьким router-файлом. Он описывает, какие группы rulesets подключать для разных типов задач, но не содержит все правила внутри себя.
 
-`docs/devs/` предназначен для людей-разработчиков, reusable prompt templates и AI workflow artifacts. Агент не должен читать этот каталог как source of truth для implementation context, business logic или review facts без явной просьбы пользователя.
+`docs/devs/` предназначен для людей-разработчиков и reusable prompt templates/schemas. Агент не должен читать этот каталог как source of truth для implementation context, business logic или review facts без явной просьбы пользователя.
 
-`docs/devs/ai-workflows/` является canonical зоной для module/feature workflow lifecycle:
+`docs/ai-workflows/` является canonical зоной для module/feature workflow lifecycle:
 
 ```text
 Module understanding
