@@ -27,7 +27,7 @@ Only document commands as available after they are implemented.
 The package is not published yet. For local development:
 
 ```bash
-node --version # requires Node.js 24+
+node --version # requires Node.js 22.12+, Node.js 24 LTS recommended
 pnpm install
 pnpm build
 node dist/cli/index.js --help

@@ -3,7 +3,7 @@
 Build the CLI locally:
 
 ```bash
-node --version # requires Node.js 24+
+node --version # requires Node.js 22.12+, Node.js 24 LTS recommended
 pnpm install
 pnpm build
 ```

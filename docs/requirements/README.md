@@ -33,12 +33,12 @@ usai prompt application-usecase
 usai rules install clean-code --size nano --target always
 ```
 
-Node.js 24 LTS + TypeScript используются как основной стек реализации. На первом этапе допустима установка через npm/pnpm, но архитектура должна оставаться friendly к будущей сборке standalone binaries под Windows, Linux и macOS.
+Node.js 22.12+ + TypeScript используются как основной стек реализации. Node.js 24 LTS является recommended runtime, но package должен работать на актуальной Node 22 LTS линии. На первом этапе допустима установка через npm/pnpm, но архитектура должна оставаться friendly к будущей сборке standalone binaries под Windows, Linux и macOS.
 
 ## Implementation Stack
 
 ```text
-Runtime: Node.js 24 LTS
+Runtime: Node.js 22.12+ minimum, Node.js 24 LTS recommended
 Language: TypeScript
 Package manager: pnpm
 CLI parser: commander
